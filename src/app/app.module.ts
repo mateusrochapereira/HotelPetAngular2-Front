@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { NovoUsuarioComponent } from './components/usuario/novo-usuario/novo-usuario.component';
+import { EsqueceuASenhaComponent } from './components/esqueceu-a-senha/esqueceu-a-senha.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UsuarioComponent,
-    NovoUsuarioComponent
+    NovoUsuarioComponent,
+    EsqueceuASenhaComponent
   ],
   imports: [
     BrowserModule,

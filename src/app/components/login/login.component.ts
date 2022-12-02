@@ -7,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
+
   linkParaNovoUsuario(): string[] {
     return ['/novoUsuario'];
   }
+
+  linkParaEsquecerSenha(): string[] {
+    return ['/esqueceuSenha']
+  };
+
 }

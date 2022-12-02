@@ -11,5 +11,11 @@ export class NovoUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  linkParaLogin(): string[] {
+    return ['/login ']
+  };
 
+  linkParaEsquecerSenha(): string[] {
+    return ['/esqueceuSenha']
+  };
 }
