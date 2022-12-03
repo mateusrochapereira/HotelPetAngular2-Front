@@ -20,5 +20,8 @@ export class LoginComponent implements OnInit {
   linkParaEsquecerSenha(): string[] {
     return ['/esqueceuSenha']
   };
+  linkHome(): string[] {
+    return ['/home']
+  };
 
 }

@@ -7,6 +7,9 @@ import { LoginComponent } from './components/login/login.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { NovoUsuarioComponent } from './components/usuario/novo-usuario/novo-usuario.component';
 import { EsqueceuASenhaComponent } from './components/esqueceu-a-senha/esqueceu-a-senha.component';
+import { HomeComponent } from './components/home/home.component';
+import { CuidadorComponent } from './components/cuidador/cuidador.component';
+import { NovoCuidadorComponent } from './components/cuidador/novo-cuidador/novo-cuidador.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { EsqueceuASenhaComponent } from './components/esqueceu-a-senha/esqueceu-
     LoginComponent,
     UsuarioComponent,
     NovoUsuarioComponent,
-    EsqueceuASenhaComponent
+    EsqueceuASenhaComponent,
+    HomeComponent,
+    CuidadorComponent,
+    NovoCuidadorComponent
   ],
   imports: [
     BrowserModule,
