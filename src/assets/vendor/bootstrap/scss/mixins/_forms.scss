@@ -41,6 +41,7 @@
   }
 }
 
+
 @mixin form-validation-state($state, $color, $icon) {
   .#{$state}-feedback {
     display: none;
@@ -112,7 +113,6 @@
   .custom-select {
     @include form-validation-state-selector($state) {
       border-color: $color;
-
       @if $enable-validation-icons {
         padding-right: $custom-select-feedback-icon-padding-right;
         background: $custom-select-background, $custom-select-bg escape-svg($icon) $custom-select-feedback-icon-position / $custom-select-feedback-icon-size no-repeat;
