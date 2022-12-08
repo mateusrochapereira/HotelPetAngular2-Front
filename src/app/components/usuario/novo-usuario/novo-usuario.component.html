@@ -36,44 +36,41 @@
             <div class="text-center">
               <h1 class="h4 text-gray-900 mb-4">Crie uma nova Conta!</h1>
             </div>
-            <form class="user">
+            <form class="user" [formGroup]="formUser">
+
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input type="text" class="form-control form-control-user" id="nome"
+                  <input type="text" class="form-control form-control-user" id="nome" formControlName="nome"
                          placeholder="Nome">
                 </div>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control form-control-user" id="sobrenome"
+                  <input type="text" class="form-control form-control-user" formControlName="sobreNome"
                          placeholder="Sobrenome">
                 </div>
 
               </div>
               <div class="form-group row">
                 <div class="col-sm-6">
-                  <input type="text" class="form-control form-control-user" id="ddd"
-                         placeholder="DDD">
+                  <input type="text" class="form-control form-control-user" formControlName="telefone"
+                         placeholder="Telefone">
                 </div>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control form-control-user" id="numero"
-                         placeholder="Número">
-                </div>
+                <input type="text" class="form-control form-control-user" formControlName="cpf"
+                       placeholder="Cpf">
               </div>
-              <div class="form-group">
-                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                       placeholder="Email">
               </div>
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input type="password" class="form-control form-control-user"
-                         id="senha" placeholder="Senha">
+                  <input type="text" class="form-control form-control-user"
+                         formControlName="email" placeholder="Email">
                 </div>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control form-control-user" id="cpf"
-                         placeholder="CPF">
+                  <input type="password" class="form-control form-control-user" formControlName="senha"
+                         placeholder="Senha">
                 </div>
               </div>
-              <a href="login.html" class="btn btn-primary btn-user btn-block">
-                Register Account
+              <a href="#" class="btn btn-primary btn-user btn-block" (click)="onSubmit()">
+                Registar Conta
               </a>
               <hr>
               <a href="index.html" class="btn btn-google btn-user btn-block">
@@ -85,10 +82,10 @@
             </form>
             <hr>
             <div class="text-center">
-              <a class="small" [routerLink]="linkParaEsquecerSenha()">Esqueceu a Senha?</a>
+<!--              <a class="small" [routerLink]="linkParaEsquecerSenha()">Esqueceu a Senha?</a>-->
             </div>
             <div class="text-center">
-              <a class="small" [routerLink]="linkParaLogin()">Ja tem uma conta? Faça login!</a>
+<!--              <a class="small" [routerLink]="linkParaLogin()">Ja tem uma conta? Faça login!</a>-->
             </div>
           </div>
         </div>

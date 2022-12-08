@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NovoUsuarioService} from "../../../services/novoUsuario.service";
+import NovoUsuarioRequest from "../../../model/request/novoUsuario.request";
+import {FormBuilder, FormGroup} from "@angular/forms";
+
+
 
 @Component({
   selector: 'app-novo-usuario',
@@ -7,15 +12,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovoUsuarioComponent implements OnInit {
 
-  constructor() { }
+  formUser : FormGroup;
 
-  ngOnInit(): void {
-  }
-  linkParaLogin(): string[] {
-    return ['/login']
-  };
+constructor( private formBuilder: FormBuilder , private novoUsuarioService: NovoUsuarioService) {
 
-  linkParaEsquecerSenha(): string[] {
-    return ['/esqueceuSenha']
-  };
+  this.formUser=this.formBuilder.group( {
+    nome: [null],
+     sobreNome: [null],
+      senha: [null],
+        email: [null],
+      cpf: [null],
+    telefone: [null]
+  });
 }
+ngOnInit(): void {
+}
+onSubmit(){
+ this.novoUsuarioService.salvar((this.formUser.value));
+
+}
+
+
+}
+
+
