@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NovoUsuarioService} from "../../../services/novoUsuario.service";
 import NovoUsuarioRequest from "../../../model/request/novoUsuario.request";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 
 
@@ -14,7 +15,8 @@ export class NovoUsuarioComponent implements OnInit {
 
   formUser : FormGroup;
 
-constructor( private formBuilder: FormBuilder , private novoUsuarioService: NovoUsuarioService) {
+constructor( private formBuilder: FormBuilder , private novoUsuarioService: NovoUsuarioService,
+             private router: Router) {
 
   this.formUser=this.formBuilder.group( {
     nome: [null],
@@ -29,9 +31,14 @@ ngOnInit(): void {
 }
 onSubmit(){
  this.novoUsuarioService.salvar((this.formUser.value));
+ alert("Cadastro com sucesso");
+ this.router.navigate(['/login']);
 
 }
+onclick() {
+  alert('Cadastro concluido',)
 
+  }
 
 }
 
