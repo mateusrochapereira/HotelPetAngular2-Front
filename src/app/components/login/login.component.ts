@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     return ['/esqueceuSenha']
   };
   linkHome(): string[] {
-    return ['/home']
+    return ['/home'];
   };
 
 }
