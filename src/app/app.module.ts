@@ -10,6 +10,7 @@ import { EsqueceuASenhaComponent } from './components/esqueceu-a-senha/esqueceu-
 import { HomeComponent } from './components/home/home.component';
 import { CuidadorComponent } from './components/cuidador/cuidador.component';
 import { NovoCuidadorComponent } from './components/cuidador/novo-cuidador/novo-cuidador.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NovoCuidadorComponent } from './components/cuidador/novo-cuidador/novo-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
