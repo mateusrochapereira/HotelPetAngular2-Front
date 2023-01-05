@@ -4,6 +4,7 @@ import {NovoCuidadorService} from "../../../services/novoCuidador.service";
 import {Router} from "@angular/router";
 import EnderecoCuidadorRequest from "../../../model/request/enderecoCuidador.request";
 import NovoCuidadorRequest from "../../../model/request/novoCuidador.request";
+import CategoriaPetRequest from "../../../model/request/categoriaPet.request";
 
 @Component({
   selector: 'app-novo-cuidador',
@@ -25,7 +26,7 @@ export class NovoCuidadorComponent implements OnInit {
       alameda: [null],
       lote: [null],
       bairro: [null],
-      tipodePet: [null],
+      tipo: [null],
       tamanho: [null],
       raca: [null],
       peso: [null]
@@ -46,20 +47,26 @@ export class NovoCuidadorComponent implements OnInit {
       this.formCuidador.controls['bairro'].value,
       this.formCuidador.controls['cep'].value
     );
-    //const novoCuidadorRequest = new NovoCuidadorRequest(this.formCuidador.controls['email'].value,enderecoCuidadorRequest);
+
+    const categoriaPetRequest = new CategoriaPetRequest(
+      this.formCuidador.controls['tipo'].value,
+      this.formCuidador.controls['peso'].value,
+      this.formCuidador.controls['tamanho'].value,
+      this.formCuidador.controls['raca'].value,
+    );
+
+    const novoCuidadorRequest =
+      new NovoCuidadorRequest(this.formCuidador.controls['descricaoLocal'].value,
+        this.formCuidador.controls['email'].value,
+        enderecoCuidadorRequest,
+        categoriaPetRequest);
+
+    this.novoCuidadorService.salvarCuidador(novoCuidadorRequest);
 
 
-    //this.novoCuidadorService.salvarCuidador(novoCuidadorRequest);
-
-
-    //
-    alert("Cadastro com sucesso");
-    this.router.navigate(['/home']);
+    // alert("Cadastro com sucesso");
+    // this.router.navigate(['/home']);
 
   }
 
-  onclick() {
-    alert('Cadastro concluido',)
-
-  }
 }
