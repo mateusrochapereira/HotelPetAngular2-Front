@@ -258,7 +258,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">Lista de Cuidadores</h1>
+          <h1 class="h3 mb-0 text-gray-800"></h1>
           <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
@@ -272,16 +272,22 @@
         <div class="col-lg-12">
 
           <!-- Circle Buttons -->
-          <div class="card shadow mb-4">
+          <div class="card shadow mb-4" *ngFor="let cuidador of this.cuidadores">
             <div class="card-header py-3">
-              <a [routerLink]="buscaCuidadores()" class="btn btn-primary btn-user btn-block">
+
                 Listar cuidadores
-              </a>
-              <h6 class="m-0 font-weight-bold text-primary">Mateus Rocha Pereira</h6>
+<!--             <a [routerLink]="listarTodosCuidadores()" class="btn btn-primary btn-user btn-block">-->
+<!--               <</a>-->
+
+              <span>{{ cuidador.descricaoLocal}}</span>
+              <span>{{cuidador.email}}</span>
+              <span>{{cuidador.categoriaPet}}</span>
+              <span>{{cuidador.endereco}}</span>
+              <!--<h6 class="m-0 font-weight-bold text-primary">Mateus Rocha Pereira</h6>-->
             </div>
+            <span>{{cuidador.email}}</span>
 
-
-            <div class="card-body">
+          <!--  <div class="card-body">
 
               <p>307 Norte Alameda 20 lote 62</p>
               <p>Cachorro</p>
@@ -292,13 +298,13 @@
           </div>
         </div>
       </div>
-      <!-- Final cuidador 1 -->
+      &lt;!&ndash; Final cuidador 1 &ndash;&gt;
 
       <div class="row">
 
         <div class="col-lg-12">
 
-          <!-- Circle Buttons -->
+          &lt;!&ndash; Circle Buttons &ndash;&gt;
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Felipe Rocha</h6>
@@ -312,7 +318,7 @@
 
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
       <!--      final cuidador 2-->
 
