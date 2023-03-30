@@ -54,18 +54,18 @@
         </button>
 
         <!-- Topbar Search -->
-        <form
-          class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-          <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Endereço.."
-                   aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="button">
-                <i class="fas fa-search fa-sm"></i>
-              </button>
-            </div>
-          </div>
-        </form>
+<!--        <form-->
+<!--          class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">-->
+<!--          <div class="input-group">-->
+<!--            <input type="text" class="form-control bg-light border-0 small" placeholder="Endereço.."-->
+<!--                   aria-label="Search" aria-describedby="basic-addon2">-->
+<!--            <div class="input-group-append">-->
+<!--              <button class="btn btn-primary" type="button">-->
+<!--                <i class="fas fa-search fa-sm"></i>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </form>-->
 
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
@@ -267,59 +267,65 @@
 
       </div>
 
-      <div class="row">
 
-        <div class="col-lg-12">
+<!--           Circle Buttons-->
+<!--          <a [routerLink]="buscaPorEndereco()"  class="btn btn-primary btn-user btn-block")>-->
+<!--            Busca-->
+<!--            </a>-->
 
-          <!-- Circle Buttons -->
-          <div class="card shadow mb-4" *ngFor="let cuidador of this.cuidadores">
-            <div class="card-header py-3">
-
-                Listar cuidadores
-<!--             <a [routerLink]="listarTodosCuidadores()" class="btn btn-primary btn-user btn-block">-->
-<!--               <</a>-->
-
-              <span>{{ cuidador.descricaoLocal}}</span>
-              <span>{{cuidador.email}}</span>
-              <span>{{cuidador.categoriaPet}}</span>
-              <span>{{cuidador.endereco}}</span>
-              <!--<h6 class="m-0 font-weight-bold text-primary">Mateus Rocha Pereira</h6>-->
+        <form  [formGroup]="formBuscaCuidador">
+          class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+                               >
+          <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Endereço.."
+                   aria-label="Search" aria-describedby="basic-addon2" (input)="buscaPorEndereco($event" )>
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button">
+                <i class="fas fa-search fa-sm"></i>
+              </button>
             </div>
-            <span>{{cuidador.email}}</span>
+          </div>
+        </form>
 
-          <!--  <div class="card-body">
 
-              <p>307 Norte Alameda 20 lote 62</p>
-              <p>Cachorro</p>
-              <p>25 kg</p>
-              <p>90cm</p>
-              <p>Todos</p>
-            </div>
+    <div class="row" >
+
+      <div class="col-lg-12" >
+
+        <div class="card card-body" *ngFor="let cuidador of this.cuidadores">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Felipe Rocha</h6>
+          </div>
+          <div class="card-body">
+            <p><span>{{cuidador.nomeCompleto}}</span></p>
+            <p><span>{{cuidador.quadra}}</span></p>
+            <p> {{cuidador.alameda}}</p>
           </div>
         </div>
+        </div>
       </div>
-      &lt;!&ndash; Final cuidador 1 &ndash;&gt;
+    </div>
 
-      <div class="row">
 
-        <div class="col-lg-12">
+<!--        <div class="col-lg-12">-->
 
-          &lt;!&ndash; Circle Buttons &ndash;&gt;
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Felipe Rocha</h6>
-            </div>
-            <div class="card-body">
-              <p>307 Norte Alameda 20 lote 62</p>
-              <p>Gato</p>
-              <p>Até 25 kg</p>
-              <p>40 cm</p>
-              <p>Vira lata</p>
+<!--          &lt;!&ndash; Circle Buttons &ndash;&gt;-->
+<!--          <div class="card shadow mb-4">-->
+<!--            <div class="card-header py-3">-->
+<!--              <h6 class="m-0 font-weight-bold text-primary">Felipe Rocha</h6>-->
+<!--            </div>-->
+<!--            <div class="card-body">-->
+<!--              <p>307 Norte Alameda 20 lote 62</p>-->
+<!--              <p>Gato</p>-->
+<!--              <p>Até 25 kg</p>-->
+<!--              <p>40 cm</p>-->
+<!--              <p>Vira lata</p>-->
 
-            </div>
-          </div>
-        </div>-->
-      </div>
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
       <!--      final cuidador 2-->
 
       <!-- Scroll to Top Button-->
