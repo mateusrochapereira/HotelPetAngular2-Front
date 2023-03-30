@@ -1,31 +1,43 @@
-import EnderecoCuidadorRequest from "../request/enderecoCuidador.request";
-import CategoriaPetRequest from "../request/categoriaPet.request";
-import {empty} from "rxjs";
-
-export default class CuidadorListarResponse{
-
+export default class CuidadorListarResponse {
+  private _nomeCompleto: string;
+  private _quadra: string;
+  private _alameda: string;
 
 
-  constructor( descricaoLocal: string, email: string, endereco: EnderecoCuidadorRequest
-    , categoriaPet: CategoriaPetRequest ) {
-    this.descricaoLocal = descricaoLocal;
-    this.email = email;
-    this.endereco = endereco;
-    this.categoriaPet = categoriaPet;
+  constructor(nomeCompleto: string, quadra: string, alameda: string) {
+    this._nomeCompleto = nomeCompleto;
+    this._quadra = quadra;
+    this._alameda = alameda;
 
 
   }
 
-descricaoLocal!: string;
-  email!: string;
-  endereco!: EnderecoCuidadorRequest;
-  categoriaPet!: CategoriaPetRequest;
+
+  get nomeCompleto(): string {
+    return this._nomeCompleto;
+  }
+
+  set nomeCompleto(value: string) {
+    this._nomeCompleto = value;
+  }
+
+  get quadra(): string {
+    return this._quadra;
+  }
+
+  set quadra(value: string) {
+    this._quadra = value;
+  }
+
+  get alameda(): string {
+    return this._alameda;
+  }
+
+  set alameda(value: string) {
+    this._alameda = value;
+  }
 
   static empty() {
-    return new CuidadorListarResponse( '', '',
-      new EnderecoCuidadorRequest('','','','','',),
-      new CategoriaPetRequest('',0,0,''));
+    return new CuidadorListarResponse("", "", "");
   }
-
-
 }
